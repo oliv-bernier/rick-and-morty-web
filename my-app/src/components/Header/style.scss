@@ -1,0 +1,54 @@
+@use '../../vars';
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#32334F;
+    margin: 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid vars.$color2;
+
+    &__title {
+        padding: 1rem 0 0 0;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 48px;
+        text-shadow:#e7f6ff 0 -1px 0,
+                    #2D6C50 1px 1px 0,
+                    #2D6C50 2px 2px 0,
+                    #ABD08F 3px 3px 0,
+                    #ABD08F 4px 4px 0,
+                    #ffe687 5px 5px 0,
+                    #96C680 5px 5px 10px;color:rgb(4, 176, 200);
+    }
+
+    &__nav {
+
+    }
+
+    &__list {
+        font-family: 'Lexend Mega', sans-serif;
+        font-size: 1rem;
+        font-weight: bold;
+        color: vars.$color1;
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+    }
+
+    &__list li {
+        padding: 10px 100px;
+        border: 1px solid vars.$color2;
+        margin: 0 1rem;
+        border-radius: 10px;
+    }
+
+    &__list a:visited {
+        color: vars.$color1;
+    }
+
+    &__list li:hover {
+        background-color: vars.$color3;
+        color: vars.$color4;
+    }
+}

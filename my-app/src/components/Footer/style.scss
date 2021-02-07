@@ -1,0 +1,24 @@
+@use '../../vars';
+
+.footer {
+    background-color: #32334F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    margin: 0;
+    border-top: 1px solid vars.$color2;
+}
+
+.footer p {
+    font-family: vars.$font;
+    color: vars.$color1;
+    padding: 0;
+    margin: 0.3rem;
+    font-size: 0.8rem;
+}
+
+.footer a {
+    color: vars.$color2;
+    
+}

@@ -1,0 +1,19 @@
+@use '../../vars';
+
+.home {
+    color: vars.$color3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 5rem;
+    font-family: vars.$mainFont;
+    font-size: 1.2rem;
+
+    &__box {
+        text-align: center;
+    }
+
+    &__react {
+        width: 600px;
+    }
+}
