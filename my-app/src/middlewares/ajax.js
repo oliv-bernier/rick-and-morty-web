@@ -1,6 +1,6 @@
 /* eslint-disable default-case */
 import axios from 'axios';
-import { FETCH_CHARACTERS, saveCharacters } from '../actions/characters';
+import { FETCH_CHARACTERS, saveCharacters, saveInfos } from '../actions/characters';
 
 // axios.defaults.baseURL = 'https://rickandmortyapi.com/api';
 
@@ -9,9 +9,10 @@ const ajax = (store) => (next) => (action) => {
     case FETCH_CHARACTERS:
       axios.get('https://rickandmortyapi.com/api/character')
         .then((response) => {
-            console.log(response.data);
+            console.log(response.data.info);
             console.log('réussi');
             store.dispatch(saveCharacters(response.data.results));
+            store.dispatch(saveInfos(response.data.info));
         })
         .catch((error) => {
             console.log('Cela ne fonctionne pas');

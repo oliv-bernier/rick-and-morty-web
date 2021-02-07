@@ -5,6 +5,7 @@ import { fetchCharacters } from '../../actions/characters';
 
 const mapStateToProps = (state) => ({
   characters: state.characters.list,
+  infos: state.characters.infos,
 });
 
 const mapDispatchToProps = (dispatch) => ({

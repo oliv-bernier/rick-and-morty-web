@@ -1,9 +1,10 @@
-import { SAVE_CHARACTERS } from '../actions/characters';
+import { SAVE_CHARACTERS, SAVE_INFOS } from '../actions/characters';
 
 const initialState = {
     list: [],
     homePage: true,
     charactersPage: false,
+    infos: {},
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -15,6 +16,11 @@ const reducer = (state = initialState, action = {}) => {
                 homePage: false,
                 charactersPage: true,
             };
+        case SAVE_INFOS:
+            return {
+                ...state,
+                infos: action.infos,
+            }
         default:
             return state;
     }

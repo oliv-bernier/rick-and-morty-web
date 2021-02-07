@@ -8,9 +8,7 @@ const Character = ({ name, status, species, image }) => {
     <div className="character">
       <img className="character__image" src={image} alt="Un personnage" />
       <div className="character__content">
-        <p>Name :</p>
-        <p>Status :</p>
-        <p>Species :</p>
+        <p>{name}</p>
       </div>
     </div>
   );

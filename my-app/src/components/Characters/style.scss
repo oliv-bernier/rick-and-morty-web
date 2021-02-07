@@ -1,0 +1,59 @@
+@use '../../vars';
+
+.characters {
+
+    &__legend {
+        text-align: center;
+        color: vars.$color2;
+    }
+
+    &__results {
+        text-align: center;
+        font-weight: bold;
+        color: vars.$color3;
+        font-size: 1.2rem;
+    }
+
+    &__number {
+        color: vars.$color2;
+    }
+
+    &__content {
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__pagination {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: vars.$color2;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+
+    &__button {
+        margin: 1rem;
+        background-color: vars.$color3;
+        border: 2px solid vars.$color3;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+
+    &__button:hover {
+        background-color: vars.$color4;
+        border: 2px solid vars.$color2;
+        color: vars.$color3;
+        cursor: pointer;
+    }
+}
