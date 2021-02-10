@@ -4,7 +4,7 @@ import Character from '../Character';
 
 import './style.scss';
 
-const Characters = ({ fetchCharacters, characters, infos }) => {
+const Characters = ({ fetchCharacters, characters, infos, previousPage, nextPage }) => {
 
     useEffect(() => {
         fetchCharacters();
@@ -23,8 +23,8 @@ const Characters = ({ fetchCharacters, characters, infos }) => {
             </div>
             <p className="characters__pagination">Page # of #</p>
             <div className="characters__buttons">
-                <button className="characters__button">Left</button>
-                <button className="characters__button">Right</button>
+                <button className="characters__button" onClick={previousPage}>Left</button>
+                <button className="characters__button" onClick={nextPage}>Right</button>
             </div>
         </section>
     );
@@ -43,6 +43,8 @@ Characters.propTypes = {
             pages: PropTypes.number.isRequired,
         })
     ).isRequired,
+    previousPage: PropTypes.func.isRequired,
+    nextPage: PropTypes.func.isRequired,
 };
 
 export default Characters;

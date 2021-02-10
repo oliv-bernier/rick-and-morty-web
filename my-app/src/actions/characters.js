@@ -14,3 +14,14 @@ export const saveInfos = (infos) => ({
   type: SAVE_INFOS,
   infos,
 });
+
+export const INCREMENT_PAGE = 'INCREMENT_PAGE';
+export const incrementPage = () => ({
+  type: INCREMENT_PAGE,
+});
+
+
+export const DECREMENT_PAGE = 'DECREMENT_PAGE';
+export const decrementPage = () => ({
+  type: DECREMENT_PAGE,
+});

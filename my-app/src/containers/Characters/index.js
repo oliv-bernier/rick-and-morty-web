@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Characters from '../../components/Characters';
 
-import { fetchCharacters } from '../../actions/characters';
+import { fetchCharacters, incrementPage, decrementPage } from '../../actions/characters';
 
 const mapStateToProps = (state) => ({
   characters: state.characters.list,
@@ -10,6 +10,14 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     fetchCharacters: () => {
+      dispatch(fetchCharacters());
+    },
+    previousPage: () => {
+      dispatch(decrementPage());
+      dispatch(fetchCharacters());
+    },
+    nextPage: () => {
+      dispatch(incrementPage());
       dispatch(fetchCharacters());
     },
 });
