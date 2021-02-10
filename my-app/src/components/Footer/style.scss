@@ -8,6 +8,7 @@
     padding: 1rem 0;
     margin: 0;
     border-top: 1px solid vars.$color2;
+    text-align: center;
 }
 
 .footer p {
@@ -15,10 +16,15 @@
     color: vars.$color1;
     padding: 0;
     margin: 0.3rem;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
 }
 
 .footer a {
     color: vars.$color2;
-    
+}
+
+@media (min-width: 1400px) {
+    .footer p {
+        font-size: 0.8rem;
+    }
 }

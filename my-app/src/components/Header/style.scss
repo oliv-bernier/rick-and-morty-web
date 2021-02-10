@@ -23,7 +23,7 @@
         }
     
         &__nav {
-    
+            display: flex;
         }
     
         &__list {
@@ -31,10 +31,11 @@
             font-size: 0.7rem;
             font-weight: bold;
             color: vars.$color1;
+            list-style-type: none;
             display: flex;
             flex-direction: row;
-            list-style-type: none;
-    
+            justify-content: center;
+            padding: 0;
         }
     
         &__list li {
