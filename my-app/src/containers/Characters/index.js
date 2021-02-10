@@ -6,6 +6,7 @@ import { fetchCharacters, incrementPage, decrementPage } from '../../actions/cha
 const mapStateToProps = (state) => ({
   characters: state.characters.list,
   infos: state.characters.infos,
+  PageId: state.characters.PageId,
 });
 
 const mapDispatchToProps = (dispatch) => ({
