@@ -5,7 +5,12 @@ import './style.scss';
 
 const Header = () => (
     <header className="header">
-        <p className="header__title">The RICK and MORTY Web</p>
+        <NavLink
+            to="/"
+            exact
+        >
+            <p className="header__title">The RICK and MORTY Web</p>
+        </NavLink>
         <nav className="header__nav">
             <ul className="header__list">
                 <NavLink 

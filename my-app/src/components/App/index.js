@@ -9,25 +9,18 @@ import Characters from '../../containers/Characters';
 
 import './style.scss';
 
-const App = ({ homePage, charactersPage }) => (
+const App = () => (
     <div className="app">
+        <Header />
         <Route path="/" exact>
-            <Header />
-            {homePage && (<Home />)}
-            <Footer />
+            <Home />
         </Route>
         <Route path="/characters" exact>
-            <Header />
             <Characters />
-            <Footer />
         </Route>
+        <Footer />
     </div>
 );
 
-App.propTypes = {
-    homePage: PropTypes.bool.isRequired,
-    charactersPage: PropTypes.bool.isRequired,
-};
-  
 
 export default App;
