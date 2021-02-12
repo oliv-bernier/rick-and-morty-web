@@ -29,7 +29,7 @@
 
     &__pagination {
         text-align: center;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         font-weight: bold;
         color: vars.$color2;
     }
@@ -42,7 +42,7 @@
     }
 
     &__button {
-        margin: 1rem;
+        margin: 0 1rem;
         background-color: vars.$color3;
         border: 2px solid vars.$color3;
         border-radius: 50%;

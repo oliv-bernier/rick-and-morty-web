@@ -25,18 +25,18 @@ const Characters = ({ fetchCharacters, characters, infos, previousPage, nextPage
     return (
         <section className="characters">
             <div className="characters__results">
-                <p><pan className="characters__number">{infos.count}</pan> characters found --- <span className="characters__number">{infos.pages}</span> generated pages</p>
+                <p><span className="characters__number">{infos.count}</span> characters found --- <span className="characters__number">{infos.pages}</span> generated pages</p>
             </div>
             <p className="characters__legend">Click on a character to see details</p>
-            <div className="characters__content">
-            {characters.map((character) => (
-                <Character key={character.id} {...character} />
-            ))}
-            </div>
             <p className="characters__pagination">Page # of #</p>
             <div className="characters__buttons">
                 <button className="characters__button" onClick={handlePrevious}>Left</button>
                 <button className="characters__button" onClick={handleNext}>Right</button>
+            </div>
+            <div className="characters__content">
+            {characters.map((character) => (
+                <Character key={character.id} {...character} />
+            ))}
             </div>
         </section>
     );
