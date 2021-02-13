@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Character from '../Character';
+import Character from '../../containers/Character';
 import Pagination from '../../containers/Pagination';
-import Details from '../Details';
+import CharacterDetails from '../../containers/Details';
 
 import './style.scss';
 
-const Characters = ({ fetchCharacters, characters, infos, PageId }) => {
+const Characters = ({ fetchCharacters, characters, infos, PageId, fetchCharacter, isDetails, oneCharacter }) => {
 
     useEffect(() => {
         fetchCharacters();
@@ -20,17 +20,18 @@ const Characters = ({ fetchCharacters, characters, infos, PageId }) => {
             <Pagination infos={infos} PageId={PageId} />
             <div className="characters__content">
             {characters.map((character) => (
-                <Character key={character.id} {...character} />
+                <Character key={character.id} {...character} fetchCharacter={fetchCharacter} />
             ))}
             </div>
             <Pagination infos={infos} PageId={PageId} />
-            <Details />
+            {isDetails && <CharacterDetails key={oneCharacter.id} oneCharacter={oneCharacter} />}
         </section>
     );
 };
 
 Characters.propTypes = {
     fetchCharacters: PropTypes.func.isRequired,
+    fetchCharacter: PropTypes.func.isRequired,
     characters: PropTypes.arrayOf(
         PropTypes.shape({
         id: PropTypes.number.isRequired,
@@ -42,6 +43,12 @@ Characters.propTypes = {
         })
     ).isRequired,
     PageId: PropTypes.number.isRequired,
+    isDetails: PropTypes.bool.isRequired,
+    oneCharacter: PropTypes.objectOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+        })
+    )
 };
 
 export default Characters;

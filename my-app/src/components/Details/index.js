@@ -5,41 +5,59 @@ import Pagination from '../../containers/Pagination';
 
 import './style.scss';
 
-const Details = ({}) => {
+const CharacterDetails = ({ oneCharacter, closeDetails }) => {
+    console.log(oneCharacter);
+
+    const handleClose = () => {
+        return closeDetails();
+    };
+
     return (
         <section className="details">
             <div className="details__global">
-            <img className="details__global-image" src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt=""></img>
+            <img className="details__global-image" src={oneCharacter.image} alt=""></img>
             <ul className="details__global-list">
+                {/* {details.map((detail) => {
+                    <li>id: {detail.id}</li>
+                })} */}
                 <li className="details__global-list-item">
-                        id: 
+                        id: {oneCharacter.id}
                 </li>
                 <li className="details__global-list-item">
-                        name
+                        name: {oneCharacter.name}
                 </li>
                 <li className="details__global-list-item">
-                        status
+                        status: {oneCharacter.status}
                 </li>
                 <li className="details__global-list-item">
-                        species
+                        species: {oneCharacter.species}
                 </li>
                 <li className="details__global-list-item">
-                        gender
+                        gender: {oneCharacter.gender}
                 </li>
                 <li className="details__global-list-item">
-                        origin
+                        origin: {oneCharacter.origin.name}
                 </li>
                 <li className="details__global-list-item">
-                        location
+                        location: {oneCharacter.location.name}
                 </li>
-                <li className="details__global-list-item">
-                        episode
-                </li>
+                {/* <li className="details__global-list-item">
+                        episode: 
+                </li> */}
             </ul>
-            <button className="details__global-button">x</button>
+            <button className="details__global-button" onClick={handleClose}>x</button>
             </div>
         </section>
     );
 };
 
-export default Details;
+CharacterDetails.propTypes = {
+    infos: PropTypes.objectOf(
+        PropTypes.shape({
+            count: PropTypes.number.isRequired,
+        })
+    ).isRequired,
+    closeDetails: PropTypes.func.isRequired,
+};
+
+export default CharacterDetails;
