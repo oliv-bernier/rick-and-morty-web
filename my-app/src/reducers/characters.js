@@ -6,6 +6,7 @@ const initialState = {
     charactersPage: false,
     infos: {},
     PageId: 1,
+    isZero: false,
 };
 
 const reducer = (state = initialState, action = {}) => {

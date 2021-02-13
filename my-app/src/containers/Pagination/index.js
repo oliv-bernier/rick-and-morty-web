@@ -1,19 +1,11 @@
 import { connect } from 'react-redux';
-import Characters from '../../components/Characters';
+import Characters from '../../components/Pagination';
 
 import { fetchCharacters, incrementPage, decrementPage } from '../../actions/characters';
 
-const mapStateToProps = (state) => ({
-  characters: state.characters.list,
-  infos: state.characters.infos,
-  PageId: state.characters.PageId,
-  isZero: state.characters.isZero,
-});
+const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchCharacters: () => {
-      dispatch(fetchCharacters());
-    },
     previousPage: () => {
       dispatch(decrementPage());
       dispatch(fetchCharacters());
