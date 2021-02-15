@@ -4,9 +4,10 @@ import Pagination from '../../containers/Pagination';
 
 import './style.scss';
 
-const Episodes = ({ fetchEpisodes, infos }) => {
+const Episodes = ({ restartPages, fetchEpisodes, infos, PageId, episodes }) => {
 
     useEffect(() => {
+        restartPages();
         fetchEpisodes();
     }, []);
 
@@ -15,30 +16,33 @@ const Episodes = ({ fetchEpisodes, infos }) => {
             <div className="episodes__results">
                 <p><span className="episodes__number">{infos.count}</span> episodes found</p>
             </div>
-            {/* <Pagination infos={infos} PageId={PageId} /> */}
+            <Pagination infos={infos} PageId={PageId} fetch={fetchEpisodes} />
             <div className="episodes__content">
-            {/* {characters.map((character) => (
-                <Character key={character.id} {...character} fetchCharacter={fetchCharacter} />
-            ))} */}
+            {episodes.map((episode) => (
+              <div className="episodes__content-div">
+                <p>{episode.name}</p>
+              </div>
+            ))}
             </div>
-            {/* <Pagination infos={infos} PageId={PageId} /> */}
+            <Pagination infos={infos} PageId={PageId} fetch={fetchEpisodes} />
         </section>
     );
 };
 
 Episodes.propTypes = {
+    restartPages: PropTypes.func.isRequired,
     fetchEpisodes: PropTypes.func.isRequired,
-    // episodes: PropTypes.arrayOf(
-    //     PropTypes.shape({
-    //     id: PropTypes.number.isRequired,
-    //     }),
-    // ).isRequired,
+    episodes: PropTypes.arrayOf(
+        PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        }),
+    ).isRequired,
     infos: PropTypes.objectOf(
         PropTypes.shape({
             count: PropTypes.number.isRequired,
         })
     ).isRequired,
-    // PageId: PropTypes.number.isRequired,
+    PageId: PropTypes.number.isRequired,
 };
 
 export default Episodes;

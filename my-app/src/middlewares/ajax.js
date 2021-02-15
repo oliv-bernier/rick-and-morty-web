@@ -6,9 +6,9 @@ import { FETCH_EPISODES, saveEpisodes } from '../actions/episodes';
 axios.defaults.baseURL = 'https://rickandmortyapi.com/api';
 
 const ajax = (store) => (next) => (action) => {
+  const { PageId } = store.getState().pagination;
   switch (action.type) {
     case FETCH_CHARACTERS:
-      const { PageId } = store.getState().characters;
       axios.get(`/character?page=${PageId}`)
         .then((response) => {
             console.log(response.data.info);
@@ -33,8 +33,7 @@ const ajax = (store) => (next) => (action) => {
         })
       break;
     case FETCH_EPISODES:
-      const { pageEpId } = store.getState().episodes;
-      axios.get(`/episode?page=${pageEpId}`)
+      axios.get(`/episode?page=${PageId}`)
         .then((response) => {
           store.dispatch(saveEpisodes(response.data.results));
           store.dispatch(saveInfos(response.data.info));

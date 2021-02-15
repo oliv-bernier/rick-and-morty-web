@@ -5,10 +5,12 @@ import Pagination from '../../containers/Pagination';
 import CharacterDetails from '../../containers/Details';
 
 import './style.scss';
+import { restartPages } from '../../actions/pagination';
 
-const Characters = ({ fetchCharacters, characters, infos, PageId, fetchCharacter, isDetails, oneCharacter }) => {
+const Characters = ({ restartPages, fetchCharacters, characters, infos, PageId, fetchCharacter, isDetails, oneCharacter }) => {
 
     useEffect(() => {
+        restartPages();
         fetchCharacters();
     }, []);
 
@@ -17,19 +19,20 @@ const Characters = ({ fetchCharacters, characters, infos, PageId, fetchCharacter
             <div className="characters__results">
                 <p><span className="characters__number">{infos.count}</span> characters found</p>
             </div>
-            <Pagination infos={infos} PageId={PageId} />
+            <Pagination infos={infos} PageId={PageId} fetch={fetchCharacters} />
             <div className="characters__content">
             {characters.map((character) => (
                 <Character key={character.id} {...character} fetchCharacter={fetchCharacter} />
             ))}
             </div>
-            <Pagination infos={infos} PageId={PageId} />
+            <Pagination infos={infos} PageId={PageId} fetch={fetchCharacters} />
             {isDetails && <CharacterDetails key={oneCharacter.id} oneCharacter={oneCharacter} />}
         </section>
     );
 };
 
 Characters.propTypes = {
+    restartPages: PropTypes.func.isRequired,
     fetchCharacters: PropTypes.func.isRequired,
     fetchCharacter: PropTypes.func.isRequired,
     characters: PropTypes.arrayOf(

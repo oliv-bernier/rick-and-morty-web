@@ -5,7 +5,6 @@ const initialState = {
     homePage: true,
     charactersPage: false,
     infos: {},
-    PageId: 1,
     characterId: '',
     oneCharacter: [],
     isDetails: false,
@@ -24,16 +23,6 @@ const reducer = (state = initialState, action = {}) => {
             return {
                 ...state,
                 infos: action.infos,
-            };
-        case INCREMENT_PAGE:
-            return {
-                ...state,
-                PageId: state.PageId +1,
-            };
-        case DECREMENT_PAGE:
-            return {
-                ...state,
-                PageId: state.PageId -1,
             };
         case SAVE_CHARACTER:
             return {
