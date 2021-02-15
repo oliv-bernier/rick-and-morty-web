@@ -3,7 +3,7 @@ import Details from '../../components/Details';
 
 import { closeDetails } from '../../actions/characters';
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (dispatch) => ({
     closeDetails: () => {
