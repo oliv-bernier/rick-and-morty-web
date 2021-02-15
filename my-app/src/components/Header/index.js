@@ -21,8 +21,15 @@ const Header = () => (
                 >
                     <li>Characters</li>
                 </NavLink>
-                <a href="#"><li>Episodes</li></a>
-                <a href="#"><li className="last">Locations</li></a>
+                <NavLink
+                    className="meunu__link"
+                    activeClassName="menu__link--active"
+                    to="/episodes"
+                    exact
+                >
+                    <li>Episodes</li>
+                </NavLink>
+                <a><li className="last">Locations</li></a>
             </ul>
         </nav>
     </header>

@@ -87,6 +87,10 @@
             margin: 0 1rem;
             border-radius: 10px;
         }
+
+        &__list a:link {
+            color: vars.$color1;
+        }
     
         &__list a:visited {
             color: vars.$color1;
@@ -97,4 +101,8 @@
             color: vars.$color4;
         }
     }
+}
+
+.menu__link--active li {
+    color: vars.$color3;
 }
