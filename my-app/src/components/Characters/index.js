@@ -1,37 +1,16 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Character from '../Character';
+import Character from '../../containers/Character';
 import Pagination from '../../containers/Pagination';
+import CharacterDetails from '../../containers/Details';
 
 import './style.scss';
 
-const Characters = ({ fetchCharacters, characters, infos, previousPage, nextPage, PageId, isZero }) => {
+const Characters = ({ fetchCharacters, characters, infos, PageId, fetchCharacter, isDetails, oneCharacter }) => {
 
     useEffect(() => {
         fetchCharacters();
     }, []);
-
-    const handlePrevious = () => {
-        if (PageId > 1 && PageId <= 34) {
-            return previousPage();
-        }
-    };
-
-    const handleNext = () => {
-        if (PageId >= 1 && PageId < 34) {
-            return nextPage();
-        }
-    };
-
-    // const pageZero = () => {
-    //     // if (PageId === 1) {
-    //     //     return 'lol';
-    //     // }
-    //     // else {
-    //         return PageId;
-    //     // }
-    // };
-
 
     return (
         <section className="characters">
@@ -41,15 +20,18 @@ const Characters = ({ fetchCharacters, characters, infos, previousPage, nextPage
             <Pagination infos={infos} PageId={PageId} />
             <div className="characters__content">
             {characters.map((character) => (
-                <Character key={character.id} {...character} />
+                <Character key={character.id} {...character} fetchCharacter={fetchCharacter} />
             ))}
             </div>
+            <Pagination infos={infos} PageId={PageId} />
+            {isDetails && <CharacterDetails key={oneCharacter.id} oneCharacter={oneCharacter} />}
         </section>
     );
 };
 
 Characters.propTypes = {
     fetchCharacters: PropTypes.func.isRequired,
+    fetchCharacter: PropTypes.func.isRequired,
     characters: PropTypes.arrayOf(
         PropTypes.shape({
         id: PropTypes.number.isRequired,
@@ -58,13 +40,15 @@ Characters.propTypes = {
     infos: PropTypes.objectOf(
         PropTypes.shape({
             count: PropTypes.number.isRequired,
-            // pages: PropTypes.number.isRequired,
         })
     ).isRequired,
-    previousPage: PropTypes.func.isRequired,
-    nextPage: PropTypes.func.isRequired,
     PageId: PropTypes.number.isRequired,
-    isZero: PropTypes.bool.isRequired,
+    isDetails: PropTypes.bool.isRequired,
+    oneCharacter: PropTypes.objectOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+        })
+    )
 };
 
 export default Characters;

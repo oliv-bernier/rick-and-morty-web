@@ -9,8 +9,18 @@
     font-family: vars.$mainFont;
     font-size: 1.2rem;
 
+    @media (max-width: 768px) {
+       font-size: 0.9rem;
+    }
+
     &__box {
         text-align: center;
+    }
+
+    &__box img {
+        @media (max-width: 768px) {
+            width: 300px;
+        }
     }
 
     &__react {
