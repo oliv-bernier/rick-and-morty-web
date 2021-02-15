@@ -1,11 +1,8 @@
-import { SAVE_CHARACTERS, SAVE_INFOS, INCREMENT_PAGE, DECREMENT_PAGE, SAVE_CHARACTER, SAVE_ID, CLOSE_DETAILS } from '../actions/characters';
+import { SAVE_CHARACTERS, SAVE_INFOS, SAVE_CHARACTER, SAVE_ID, CLOSE_DETAILS } from '../actions/characters';
 
 const initialState = {
     list: [],
-    homePage: true,
-    charactersPage: false,
     infos: {},
-    PageId: 1,
     characterId: '',
     oneCharacter: [],
     isDetails: false,
@@ -17,23 +14,11 @@ const reducer = (state = initialState, action = {}) => {
             return {
                 ...state,
                 list: action.characters,
-                homePage: false,
-                charactersPage: true,
             };
         case SAVE_INFOS:
             return {
                 ...state,
                 infos: action.infos,
-            };
-        case INCREMENT_PAGE:
-            return {
-                ...state,
-                PageId: state.PageId +1,
-            };
-        case DECREMENT_PAGE:
-            return {
-                ...state,
-                PageId: state.PageId -1,
             };
         case SAVE_CHARACTER:
             return {

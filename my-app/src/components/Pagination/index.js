@@ -2,18 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.scss';
+// import { fetch } from '../../actions/characters';
 
-const Pagination = ({ infos, previousPage, nextPage, PageId }) => {
+const Pagination = ({ infos, previousPage, nextPage, PageId, fetch }) => {
 
     const handlePrevious = () => {
         if (PageId > 1 && PageId <= infos.pages) {
-            return previousPage();
+            previousPage();
+            fetch();
         }
     };
 
     const handleNext = () => {
         if (PageId >= 1 && PageId < infos.pages) {
-            return nextPage();
+            nextPage();
+            fetch();
         }
     };
 
@@ -38,6 +41,7 @@ Pagination.propTypes = {
     previousPage: PropTypes.func.isRequired,
     nextPage: PropTypes.func.isRequired,
     PageId: PropTypes.number.isRequired,
+    fetch: PropTypes.func.isRequired,
 };
 
 export default Pagination;

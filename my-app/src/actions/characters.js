@@ -33,17 +33,6 @@ export const saveId = (id) => ({
   id,
 });
 
-export const INCREMENT_PAGE = 'INCREMENT_PAGE';
-export const incrementPage = () => ({
-  type: INCREMENT_PAGE,
-});
-
-
-export const DECREMENT_PAGE = 'DECREMENT_PAGE';
-export const decrementPage = () => ({
-  type: DECREMENT_PAGE,
-});
-
 export const CLOSE_DETAILS = 'CLOSE_DETAILS';
 export const closeDetails = () => ({
   type: CLOSE_DETAILS,
