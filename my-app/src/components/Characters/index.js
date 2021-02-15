@@ -5,7 +5,6 @@ import Pagination from '../../containers/Pagination';
 import CharacterDetails from '../../containers/Details';
 
 import './style.scss';
-import { restartPages } from '../../actions/pagination';
 
 const Characters = ({ restartPages, fetchCharacters, characters, infos, PageId, fetchCharacter, isDetails, oneCharacter }) => {
 
