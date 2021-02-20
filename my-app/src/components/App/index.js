@@ -8,6 +8,7 @@ import Characters from '../../containers/Characters';
 import Episodes from '../../containers/Episodes';
 
 import './style.scss';
+import '../../styles/general.scss';
 
 const App = () => (
     <div className="app">

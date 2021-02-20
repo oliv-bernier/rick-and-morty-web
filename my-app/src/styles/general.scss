@@ -1,0 +1,21 @@
+@use '../vars';
+
+.results {
+  text-align: center;
+  font-weight: bold;
+  color: vars.$color3;
+  font-size: 0.8rem;
+}
+
+.number {
+  color: vars.$color2;
+}
+
+@media (min-width: 1400px) {
+  .results {
+      text-align: center;
+      font-weight: bold;
+      color: vars.$color3;
+      font-size: 1.2rem;
+  }
+}

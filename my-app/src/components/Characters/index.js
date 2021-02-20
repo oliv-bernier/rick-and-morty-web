@@ -15,8 +15,8 @@ const Characters = ({ restartPages, fetchCharacters, characters, infos, PageId, 
 
     return (
         <section className="characters">
-            <div className="characters__results">
-                <p><span className="characters__number">{infos.count}</span> characters found</p>
+            <div className="results">
+                <p><span className="number">{infos.count}</span> characters found</p>
             </div>
             <Pagination infos={infos} PageId={PageId} fetch={fetchCharacters} />
             <div className="characters__content">

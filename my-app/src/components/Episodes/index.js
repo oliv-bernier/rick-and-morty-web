@@ -10,17 +10,21 @@ const Episodes = ({ restartPages, fetchEpisodes, infos, PageId, episodes }) => {
         restartPages();
         fetchEpisodes();
     }, []);
-
+    
     return (
         <section className="episodes">
-            <div className="episodes__results">
-                <p><span className="episodes__number">{infos.count}</span> episodes found</p>
+            <div className="results">
+                <p><span className="number">{infos.count}</span> episodes found</p>
             </div>
             <Pagination infos={infos} PageId={PageId} fetch={fetchEpisodes} />
             <div className="episodes__content">
             {episodes.map((episode) => (
-              <div className="episodes__content-div">
-                <p>{episode.name}</p>
+              <div className={`episodes__content-div episodes__content-div-${episode.episode.substring(0,3)}`}>
+                <p className="episodes__content-div-name">{episode.name}</p>
+                <div className='episodes__content-div-description'>
+                    <p>{episode.air_date}</p>
+                    <p>{episode.episode}</p>
+                </div>
               </div>
             ))}
             </div>

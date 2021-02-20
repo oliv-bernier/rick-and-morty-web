@@ -1,0 +1,104 @@
+@use '../../vars';
+
+.episodes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__results {
+    text-align: center;
+    font-weight: bold;
+    color: vars.$color3;
+    font-size: 1.2rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    margin: 1rem 5rem;
+
+    &-season {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      width: 100%;
+      color: vars.$color2;
+      font-size: 1.5rem;
+    }
+
+    &-div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      color: vars.$color4;
+      background-color: vars.$color3;
+      opacity: 0.7;
+      margin: 0.3rem 0;
+      padding: 0.5rem 0;
+      border-radius: 5px;
+
+      &-name {
+        font-weight: bold;
+      }
+
+      p {
+        padding: 0 2rem;
+        margin: 0;
+      }
+
+      &-description {
+        display: inline-flex;
+        justify-content: flex-end;
+      }
+
+
+
+      &-S01::before {
+        content: 'First season';
+        margin-left: 2rem;
+        padding: 0.2rem;
+        background-color: lightgray;
+        color: vars.$color4;
+        border-radius: 5px;
+        font-style: italic;
+      }
+
+      &-S02::before {
+        content: 'Second season';
+        margin-left: 2rem;
+        padding: 0.2rem;
+        background-color: vars.$color4;
+        color: vars.$color3;
+        border-radius: 5px;
+        font-style: italic;
+      }
+
+      &-S03::before {
+        content: 'Thirdseason';
+        margin-left: 2rem;
+        padding: 0.2rem;
+        background-color: lightcoral;
+        color: vars.$color4;
+        border-radius: 5px;
+        font-style: italic;
+      }
+
+      &-S04::before {
+        content: 'Fourth season';
+        margin-left: 2rem;
+        padding: 0.2rem;
+        background-color: lightseagreen;
+        color: vars.$color3;
+        border-radius: 5px;
+        font-style: italic;
+      }
+    }
+
+    &-div:hover {
+      opacity: 1;
+    }
+  }
+}
