@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Pagination from '../../containers/Pagination';
 
 import './style.scss';
 
 const Episodes = ({ restartPages, fetchEpisodes, infos, PageId, episodes }) => {
-
     useEffect(() => {
         restartPages();
         fetchEpisodes();
@@ -19,7 +18,9 @@ const Episodes = ({ restartPages, fetchEpisodes, infos, PageId, episodes }) => {
             <Pagination infos={infos} PageId={PageId} fetch={fetchEpisodes} />
             <div className="episodes__content">
             {episodes.map((episode) => (
-              <div className={`episodes__content-div episodes__content-div-${episode.episode.substring(0,3)}`}>
+              <div 
+                className={`episodes__content-div episodes__content-div-${episode.episode.substring(0,3)}`}
+              >
                 <p className="episodes__content-div-name">{episode.name}</p>
                 <div className='episodes__content-div-description'>
                     <p>{episode.air_date}</p>

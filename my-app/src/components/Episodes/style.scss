@@ -19,6 +19,10 @@
     width: 70vw;
     margin: 1rem 5rem;
 
+    @media (max-width: 767px) {
+      width: 90vw;
+    }
+
     &-season {
       display: flex;
       flex-direction: row;
@@ -26,6 +30,10 @@
       width: 100%;
       color: vars.$color2;
       font-size: 1.5rem;
+
+      @media (max-width: 767px) {
+        font-size: 0.8rem;
+      }
     }
 
     &-div {
@@ -40,8 +48,16 @@
       padding: 0.5rem 0;
       border-radius: 5px;
 
+      @media (max-width: 767px) {
+        justify-content: flex-start;
+      }
+
       &-name {
         font-weight: bold;
+
+        @media (max-width: 767px) {
+          font-size: 0.8rem;
+        }
       }
 
       p {
@@ -52,6 +68,10 @@
       &-description {
         display: inline-flex;
         justify-content: flex-end;
+
+        @media (max-width: 767px) {
+          display: none;
+        }
       }
 
 
@@ -64,6 +84,10 @@
         color: vars.$color4;
         border-radius: 5px;
         font-style: italic;
+
+        @media (max-width: 767px) {
+          font-size: 0.8rem;
+        }
       }
 
       &-S02::before {
@@ -74,6 +98,10 @@
         color: vars.$color3;
         border-radius: 5px;
         font-style: italic;
+
+        @media (max-width: 767px) {
+          font-size: 0.8rem;
+        }
       }
 
       &-S03::before {
@@ -84,6 +112,10 @@
         color: vars.$color4;
         border-radius: 5px;
         font-style: italic;
+
+        @media (max-width: 767px) {
+          font-size: 0.8rem;
+        }
       }
 
       &-S04::before {
@@ -94,6 +126,10 @@
         color: vars.$color3;
         border-radius: 5px;
         font-style: italic;
+
+        @media (max-width: 767px) {
+          font-size: 0.8rem;
+        }
       }
     }
 

@@ -12,7 +12,6 @@ const Home = () => (
             <p>Update - 13/02/2021 : Pagination</p>
             <p>Update - 07/02/2021 : Characters page</p>
             <img className="home__react" src={logo} alt="Logo de React"/>
-            <p>Please naviguate by yourself onto the site using the top menu.</p>
         </div>
     </div>
 );
