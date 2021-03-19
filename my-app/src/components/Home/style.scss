@@ -25,5 +25,15 @@
 
     &__react {
         width: 600px;
+        animation: reactSpin infinite 20s linear;
+    }
+}
+
+@keyframes reactSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }

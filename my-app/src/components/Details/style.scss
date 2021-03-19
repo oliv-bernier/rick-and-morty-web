@@ -8,6 +8,11 @@
     height: 100%;
     background-color: rgb(50, 51, 79,0.9);
     margin: 0;
+    animation: appears .5s 1;
+
+    &--disappears {
+        animation: disappears .5s 1;
+    }
 }
 
 .details__global {
@@ -20,6 +25,13 @@
     left: 35%;
     background-color: vars.$color4;
     border-radius: 15px;
+    animation: appears .5s 1;
+    animation: translateIn .5s 1;
+
+    &--disappears {
+        animation: disappears .5s 1;
+        animation: translateOut .5s 1;
+    }
 
     @media (max-width: 768px) {
         left: 5%;
@@ -69,8 +81,50 @@
     }
 
     &-button:hover {
+        cursor: pointer;
         color: vars.$color3;
         background-color: vars.$color4;
         border: 1px solid vars.$color3;
     }
 }
+
+@keyframes appears {
+    0% {
+        opacity: 0;
+    }
+  
+    100% {
+        opacity: 1;
+    }
+  }
+  
+@keyframes disappears {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes translateIn {
+    0% {
+        transform: translateX(-5rem);
+    }
+  
+    100% {
+        transform: translateX(0);
+    }
+  }
+  
+@keyframes translateOut {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(5rem);
+    }
+}
+  

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.scss';
-// import { fetch } from '../../actions/characters';
 
 const Pagination = ({ infos, previousPage, nextPage, PageId, fetch }) => {
 

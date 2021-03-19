@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import './style.scss';
 
 const CharacterDetails = ({ oneCharacter, closeDetails }) => {
-    console.log(oneCharacter);
+    const [isDisappears, setDisappears] = useState(false);
 
     const handleClose = () => {
-        return closeDetails();
+        setDisappears(true);
+        setTimeout(() => {
+            closeDetails();
+        }, 350);
     };
 
     return (
-        <section className="details">
-            <div className="details__global">
+        <section className={classNames('details', { 'details--disappears': isDisappears })}>
+            <div className={classNames('details__global', { 'details__global--disappears': isDisappears })}>
                 <img className="details__global-image" src={oneCharacter.image} alt=""></img>
                 <ul className="details__global-list">
                     {/* {details.map((detail) => {
